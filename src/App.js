@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Paper, ThemeProvider, createTheme } from "@mui/material";
 import { ProductProvider } from "./context/ProductContext";
 import ProductList from "./components/ProductList";
+import { NotFound } from "./components/NotFound";
 
 function App() {
   const [mode, setMode] = useState("dark");
@@ -28,6 +29,7 @@ function App() {
               <Route path="/products" element={<ProductList />}></Route>
               <Route path="/products/add" element={<AddProduct />}></Route>
               <Route path="/products/edit/:id" element={<EditProduct />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
             </Routes>
           </Paper>
         </ProductProvider>
